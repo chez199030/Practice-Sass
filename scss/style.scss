@@ -1,6 +1,4 @@
 @import "config";
-@import "utilities";
-@import "buttons";
 
 * {
   box-sizing: border-box;
@@ -23,8 +21,7 @@ img {
 }
 
 .showcase {
-  background-color: $primary-color;
-  color: $text-color-white;
+  @include set-bg-text-color($primary-color);
   height: 600px;
   nav {
     display: flex;
@@ -41,9 +38,9 @@ img {
     a:hover {
       color: $secondary-color;
     }
-  }
-  a {
-    color: $text-color-white;
+    a {
+      color: set-text-color($primary-color);
+    }
   }
 
   &-content {
@@ -59,8 +56,8 @@ img {
       font-size: 50px;
       line-height: 1.2;
     }
-    p {
-      margin: 20px 0;
-    }
   }
 }
+@import "utilities";
+@import "buttons";
+@import "mobile";
